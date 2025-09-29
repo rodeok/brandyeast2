@@ -1,0 +1,123 @@
+/* Scoped only to LegacySection */
+.legacy-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 3rem 5%;
+  background: #000; /* background stays only in this section */
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+.legacy-section-text {
+  flex: 1 1 400px;
+}
+
+.legacy-section-text h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.legacy-section-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.legacy-section-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.legacy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.legacy-btn-green {
+  background: #3ddc84;
+  color: #000;
+}
+
+.legacy-btn-green:hover {
+  background: #2ab76a;
+}
+
+.legacy-btn-outline {
+  border: 2px solid #3ddc84;
+  color: #fff;
+}
+
+.legacy-btn-outline:hover {
+  background: #3ddc84;
+  color: #000;
+}
+
+.legacy-section-cards {
+  flex: 1 1 350px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.legacy-card {
+  background: #1a1a2e;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.legacy-card:hover {
+  transform: translateY(-5px);
+  background: #252547;
+}
+
+.legacy-card-icon {
+  font-size: 1.8rem;
+  color: #3ddc84;
+  margin-bottom: 0.5rem;
+}
+
+.legacy-card span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .legacy-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .legacy-section-buttons {
+    justify-content: center;
+  }
+
+  .legacy-section-cards {
+    grid-template-columns: 1fr; /* cards in one column */
+    max-width: 400px;
+    margin: 0 auto; /* center cards */
+  }
+}
+
+@media (max-width: 600px) {
+  .legacy-section-cards {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
+
+

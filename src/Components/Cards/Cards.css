@@ -1,0 +1,60 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Always 2 per row */
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background-color: #eaffd8; /* Light green */
+  border: 1px solid #c5f3a8;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.card p {
+  font-size: 0.99rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #4b3c70; /* Purple button */
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #372a54;
+  transform: scale(1.05);
+}
+
+/* Make it single column on smaller screens */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+

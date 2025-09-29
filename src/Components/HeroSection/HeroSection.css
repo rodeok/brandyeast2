@@ -1,0 +1,187 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  min-height: 100vh;
+  background: url("../Images/background.png") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown p {
+  padding: 0.5rem 0;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+.dropdown p:hover {
+  color: #0073e6;
+}
+
+/* Buttons */
+.btn-dark {
+  background: #333;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-dark:hover {
+  background: #000;
+}
+
+.btn-green {
+  background: #4caf50;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-green:hover {
+  background: #3e8e41;
+}
+
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-left: 1rem;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #333;
+}
+
+/* Hero Content */
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.typing-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  border-right: 2px solid white;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 6s steps(40, end) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.12rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    display: flex;
+
+  }
+
+  .btn-outline {
+    margin: 1rem 0 0;
+  }
+}
+

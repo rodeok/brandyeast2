@@ -1,0 +1,48 @@
+.logos-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px; /* keep good space between columns */
+  row-gap: 40px;    /* make rows closer */
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.logo-card {
+  background: #fff;
+  border: 6px solid #2c2c54; /* neat visible border */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;             /* responsive width */
+  aspect-ratio: 1 / 1;     /* keep each card square */
+  padding: 5px;          /* very small padding so border hugs image */
+  transition: all 0.3s ease;
+  margin: auto;            /* center each card */
+}
+
+.logo-card:hover {
+  border-color: #4a90e2;
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.logo-card img {
+  width: 80%;    /* make image almost fill the box */
+  height: 80%;   /* scale to fit closely */
+  object-fit: cover;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .logos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logos-container {
+    grid-template-columns: 1fr;
+  }
+}

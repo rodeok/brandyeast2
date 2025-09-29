@@ -1,0 +1,188 @@
+/* TestimonialV2 - scoped names to avoid conflicts */
+.testimonials-v2 {
+  background: #1f2138; /* dark navy like your screenshot */
+  color: #fff;
+  padding: 56px 6%;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+  height: 620px;
+}
+
+/* Title */
+.testimonials-v2__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 40px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+/* Grid: 3 columns desktop */
+.testimonials-v2__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: start;
+  justify-items: center;
+  margin-top: 80px;
+}
+
+/* Each item holds a blob and a white card */
+.testimonials-v2__item {
+  position: relative;
+  width: 340px;           /* controls approximate card width similar to screenshot */
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Purple/blue blob behind - visible by default */
+.testimonials-v2__blob {
+  position: absolute;
+  z-index: 0;
+  width: 120%;
+  height: 120%;
+  top: -12%;
+  left: -10%;
+  background: linear-gradient(180deg, #6f73e8 0%, #5c63d8 100%);
+  border-radius: 60% 40% 55% 45% / 40% 60% 40% 60%;
+  transform-origin: center;
+  transition: transform 350ms ease, filter 350ms ease, opacity 350ms ease;
+  filter: drop-shadow(0 10px 25px rgba(92, 99, 216, 0.28));
+  opacity: 1; /* clearly visible by default */
+  pointer-events: none;
+}
+
+/* Slightly different tilt / position per blob to match the screenshot */
+.testimonials-v2__item .blob--1 {
+  transform: rotate(-12deg) scale(1.02);
+  left: -14%;
+  top: -6%;
+}
+.testimonials-v2__item .blob--2 {
+  transform: rotate(-2deg) scale(1.03);
+  left: -6%;
+  top: -10%;
+}
+.testimonials-v2__item .blob--3 {
+  transform: rotate(8deg) scale(1.00);
+  left: -2%;
+  top: -12%;
+}
+
+/* The white card that sits on top of the blob */
+.testimonials-v2__card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 360px;
+  padding: 34px 28px;
+  background: #ffffff;
+  color: #222;
+  border-radius: 28% 18% 26% 18% / 18% 22% 20% 28%;
+  -webkit-border-radius: 28% 18% 26% 18% / 18% 22% 20% 28%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 320ms ease, box-shadow 320ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* subtle hover lift for card and make blob pop a bit more */
+.testimonials-v2__item:hover .testimonials-v2__card {
+  transform: translateY(-14px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.testimonials-v2__item:hover .testimonials-v2__blob {
+  transform: scale(1.08);
+  filter: drop-shadow(0 18px 40px rgba(92, 99, 216, 0.36));
+  background: linear-gradient(180deg, #6b70e6 0%, #4f55d8 100%);
+}
+
+/* Name - green like screenshot */
+.testimonials-v2__name {
+  margin: 4px 0 8px;
+  color: #2fb45a; /* green */
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* big quotation icon */
+.testimonials-v2__quote {
+  font-size: 36px;
+  margin: 6px 0 12px;
+  color: #6f73e8; /* matching purple */
+}
+
+/* body text inside the white card */
+.testimonials-v2__text {
+  color: #666778;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 6px 0 18px;
+  max-width: 78%;
+}
+
+/* role / footer */
+.testimonials-v2__role {
+  margin-top: auto; /* pins the role to the bottom */
+  font-weight: 700;
+  color: #333;
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+
+/* Responsive: 2 columns on medium screens */
+@media (max-width: 1100px) {
+  .testimonials-v2__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-v2 {
+  background: #1f2138; /* dark navy like your screenshot */
+  color: #fff;
+  padding: 56px 6%;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+  height: 605px;
+}
+  .testimonials-v2__item { width: 320px; }
+  /* tweak blob scale/position so it still looks correct on this width */
+  .testimonials-v2__item .blob--1 { left: -12%; top: -8%; }
+  .testimonials-v2__item .blob--2 { left: -6%; top: -10%; }
+  .testimonials-v2__item .blob--3 { left: -4%; top: -12%; }
+}
+
+/* Mobile: single column, centered */
+@media (max-width: 720px) {
+  .testimonials-v2__grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-v2__item {
+    width: 86%;
+    margin: 0 auto;
+  }
+  .testimonials-v2__card {
+    min-height: auto;
+    padding: 28px 22px;
+  }
+  .testimonials-v2__text { max-width: 92%; }
+  /* reduce blob size on small screens so purple doesn't overwhelm */
+  .testimonials-v2__blob {
+    width: 110%;
+    height: 110%;
+    top: -10%;
+  }
+
+  .testimonials-v2 {
+  background: #1f2138; /* dark navy like your screenshot */
+  color: #fff;
+  padding: 56px 6%;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+  height: 1199px;
+}
+}
